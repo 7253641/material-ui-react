@@ -15,6 +15,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { mailFolderListItems} from './tileData.jsx';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 
 const drawerWidth = 240;
@@ -152,6 +158,8 @@ class Home extends React.Component {
     }
 
     return (
+
+      // This is the start of the div root
       <div className={classes.root}>
         <div className={classes.appFrame}>
           <AppBar
@@ -170,7 +178,7 @@ class Home extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="title" color="inherit" noWrap>
-                Material UI React App
+                NewsFeed
               </Typography>
             </Toolbar>
           </AppBar>
@@ -182,9 +190,87 @@ class Home extends React.Component {
             })}
           >
             <div className={classes.drawerHeader} />
-            <Typography>{'Welcome to our Material UI React App'}</Typography>
+
+
+    <div>
+
+    <Grid container spacing={24}>
+
+
+    {/* Beginning of the first GRID */}
+    {/* This is the first card  */}
+     <Grid item xs={12} sm={6}>
+      <Card className={classes.card}>
+        <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="headline" component="h2">
+            My Profile
+          </Typography>
+          <Typography component="p">
+          Recent Activity
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+      {/* End the first Card */}
+      </Grid>
+      {/* End the first GRID */}
+
+
+
+
+
+
+
+ {/* Beginning of new grid */}
+      <Grid item xs={12} sm={6}>
+
+  {/* This is the second card  */}
+      <Card className={classes.card}>
+        <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="headline" component="h2">
+            Trending
+          </Typography>
+          <Typography component="p">
+          View Stories
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+      </Grid>
+
+</Grid>
+{/* This is the End of the Second card  */}
+    </div>
+
+
           </main>
           {after}
+
+
         </div>
       </div>
     );
